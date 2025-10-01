@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beni Affet</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6f2; /* Pembe arka plan */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,30 C60,20 80,20 90,30 C100,40 100,60 90,70 C80,80 60,80 50,70 C40,80 20,80 10,70 C0,60 0,40 10,30 C20,20 40,20 50,30 Z" fill="none" stroke="%23ff99cc" stroke-width="2"/></svg>'), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="30" cy="30" r="20" fill="%23ffccdd"/><circle cx="70" cy="30" r="20" fill="%23ffccdd"/><circle cx="50" cy="60" r="30" fill="%23ffccdd"/><circle cx="35" cy="45" r="5" fill="white"/><circle cx="65" cy="45" r="5" fill="white"/><path d="M40,70 Q50,80 60,70" fill="none" stroke="%23993366" stroke-width="3"/></svg>');
+            background-size: 150px, 100px;
+            background-position: 10% 20%, 90% 80%;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before, .container::after {
+            content: "🌸";
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.7;
+        }
+
+        .container::before {
+            top: 10px;
+            left: 10px;
+        }
+
+        .container::after {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        h1 {
+            color: #cc3366;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .message {
+            color: #663344;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .heart {
+            color: #ff6699;
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .bear {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+
+        .affet-button {
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 102, 153, 0.4);
+        }
+
+        .affet-button:hover {
+            background-color: #ff3366;
+            transform: scale(1.05);
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            color: #cc3366;
+            font-weight: bold;
+            font-size: 1.3em;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Beni Affet Canım</h1>
+        
+        <div class="bear">🧸</div>
+        
+        <div class="message">
+            <p>Canım,</p>
+            <p>Yaptığım hatanın farkındayım ve seni üzdüğüm için çok ama çok özür diliyorum. Kalbini kırdıysam, bunun için bin pişmanım.</p>
+            <p>Sen benim için çok özelsin ve seni kaybetmek istemiyorum. Lütfen beni affet ve bir şans daha ver.</p>
+            <p>Seni çok seviyorum <span class="heart">❤️</span></p>
+        </div>
+        
+        <button class="affet-button" onclick="showMessage()">Beni Affet</button>
+        
+        <div id="hiddenMessage" class="hidden-message">
+            Teşekkür ederim! Sen dünyaların en iyisisin! ❤️
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+            document.querySelector('.affet-button').innerText = 'Çok Teşekkür Ederim!';
+            document.querySelector('.affet-button').style.backgroundColor = '#66cc99';
+            document.querySelector('.affet-button').onclick = null;
+            
+            // Butonu tıklanamaz hale getir
+            document.querySelector('.affet-button').style.cursor = 'default';
+        }
+    </script>
+</body>
+</html>
